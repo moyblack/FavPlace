@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>FavPlace</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href = "estilos.css" rel = "stylesheet" type= "text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,400'      rel='stylesheet' type='text/css'> 
+</head>
+
+    
+    <body>
+    
+        <nav>
+        <button onclick="lugares()"><img src = "marker.png"></button>
+        </nav>
+                
+        <div id = "lugares-almacenados"> 
+            
+            
+                
+        </div>
+         
+    </body>
+    
+    <script>
+    
+        window.addEventListener('load',cargarLugar, true);
+       
+        function cargarLugar()
+        { 
+            i = 0;
+            contador = localStorage.getItem('contador');
+             contenedorLugar = document.getElementById('lugares-almacenados');
+            while (i < contador)
+            {
+
+                lugar = localStorage.getItem('lugar'+i);
+                image = localStorage.getItem('image'+i);
+                precio = localStorage.getItem('precio'+i);
+                rating = localStorage.getItem('rating'+i);
+                contenedorLugar.innerHTML += 
+                                            "<div class = 'lugares'>"+
+                                            "<img src="+image+">"+
+                                            "<h1> Nombre del Lugar: " +lugar+"</h1>"+
+                                            "<p> Dinero gastado: " + precio+"$</p>"+
+                                            "<p> Rating: " + rating+" estrellas</p>"+
+                                            "</div>";
+                i++;
+            } 
+    
+        }
+        
+        function lugares()
+        {
+            window.location.assign('main.html');
+        }
+        
+    </script>
+    
+
+</html>

@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <title>FavPlace</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href = "estilos.css" rel = "stylesheet" type= "text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,400'      rel='stylesheet' type='text/css'> 
+</head>
+
+    
+    <body>
+    
+    <h1>Login</h1>
+    
+    <input type = "text" placeholder = "Correo" id="correo">
+    <input type = "password" placeholder = "Contraseña" id="password">
+    
+    <p id = "mensaje">Texto de relleno</p>  
+        
+    <button onclick= "login()">Login</button>
+    
+    <div>
+        
+    <button onclick="registro()" id="iniciar">o puedes Registrarte</button>     
+    </div>
+     
+    
+    </body>
+    
+    <script>
+    
+        function login()
+        {
+            
+            correo = document.getElementById('correo').value;
+            password = document.getElementById('password').value;
+            if((password != "") && (correo != ""))
+            {
+            //comparar valores
+            correoAlmacenado = localStorage.getItem('email');
+            passwordAlmacenado = localStorage.getItem('password');
+            
+            if(correo == correoAlmacenado && password == passwordAlmacenado)
+            {
+                contador = 0;
+                localStorage.setItem('contador',contador);
+                
+                window.location.assign('main.html');
+                
+            }
+            else
+            {
+               document.getElementById('password').style.border = "3px solid red";
+                document.getElementById('correo').style.border ="1px solid #47484b";
+                mensaje = document.getElementById('mensaje');
+                mensaje.style.transition = ".6 all";
+                mensaje.style.opacity = "1";
+                mensaje.innerHTML = "ERROR: usuario no valido";
+                navigator.vibrate('100');
+                navigator.vibrate('200');
+           
+
+            }
+            }
+            else
+            {
+            document.getElementById('correo').style.border ="3px solid red";
+            document.getElementById('password').style.border ="3px solid red";
+            
+            mensaje = document.getElementById('mensaje');
+            mensaje.innerHTML = "No has completado el formulario";
+            mensaje.style.opacity = "1";
+            }
+        }
+        function registro()
+        {
+             window.location.assign('index.html');
+        }
+    
+    </script>
+
+</html>

@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <title>FavPlace</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable = no">
+    <link href = "estilos.css" rel = "stylesheet" type= "text/css">
+</head>
+
+<body>
+     <nav>
+        <button onclick="lugares()"><img src = "marker.png"></button>
+    </nav>
+    
+    <h1 id="check">Haz tu check-in</h1>
+    <img src="" id="image">
+    
+    <input type = "text" placeholder = "Nombre del lugar" id="lugar">
+    <input type = "text" placeholder = "Dinero gastado" id="precio">
+     <p id = "mensaje">Texto de relleno</p><br>  
+    <p>Calificacion</p>
+     <input type = "checkbox" id="c1" class="chec">
+     <input type = "checkbox" id="c2" class="chec">
+     <input type = "checkbox" id="c3" class="chec">
+     <input type = "checkbox" id="c4" class="chec">
+     <input type = "checkbox" id="c5" class="chec">
+    <button onclick="guardar()">Guardar</button>
+    <button onclick="cerrar()" id="iniciar">Cerrar Sesion</button>     
+    </div>
+    
+</body>
+
+    
+<script>
+
+    window.addEventListener('load', localizar, true);
+   contador = 0;
+    function localizar()
+    {
+        navigator.geolocation.getCurrentPosition(loc);
+    }
+    
+    function loc (position)
+    {
+        lat = (position.coords.latitude);
+        long = (position.coords.longitude);
+        grados = (position.coords.heading);
+        localStorage.setItem('lat',lat);
+        localStorage.setItem('long',long);
+        localStorage.setItem('grados',grados);
+document.getElementById('image').src = "http://maps.google.com/maps/api/staticmap?center="+lat+","+long+"&zoom=15&markers="+lat+","+long+"&size=175x175";
+    }
+    function lugares()
+    {
+        window.location.assign('lugares.html');
+    }
+    function guardar()
+    {
+         rating= 0;
+        if(document.getElementById('c1').checked)
+        {
+            rating++;
+        }
+        if(document.getElementById('c2').checked)
+        {
+            rating++;
+        }
+        if(document.getElementById('c3').checked)
+        {
+            rating++;
+        }
+        if(document.getElementById('c4').checked)
+        {
+            rating++;
+        }
+        if(document.getElementById('c5').checked)
+        {
+            rating++;
+        }
+        
+        contador = localStorage.getItem('contador');
+        image = document.getElementById('image').src;
+        localStorage.setItem('image'+contador,image);
+        lugar = document.getElementById('lugar').value;
+        localStorage.setItem('lugar'+contador,lugar);
+        precio = document.getElementById('precio').value;
+        localStorage.setItem('precio'+contador,precio);
+        localStorage.setItem('rating'+contador,rating);
+        contador++;
+        localStorage.setItem('contador',contador);
+        mensaje.style.transition = ".6 all";
+        mensaje.style.opacity = "1";
+        mensaje.innerHTML = "Lugar Guardado Correctamente";
+        navigator.vibrate('100');
+        navigator.vibrate('200');
+        
+    }
+    
+     function cerrar()
+    {
+        window.location.assign('login.html');
+    }
+    
+</script>
+
+</html>

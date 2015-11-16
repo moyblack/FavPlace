@@ -1,0 +1,184 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+h1
+{
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+input
+{
+    float:left;
+    width: 90%;
+    margin-left: 5%;
+    height: 40px;
+    font-size: 17px;
+    border: 1px solid #47484b;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+button
+{
+    float:left;
+    width: 60%;
+    margin-left: 20%;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top:10px;
+    background-color: honeydew;
+}
+#iniciar
+{
+    float:left;
+    width: 70%;
+    margin-left: 15%;
+    height: 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top:10px;
+     background-color: #fff;
+    opacity: .8; 
+}
+
+
+body
+{
+    background-image:url(paisaje.jpg);
+    background-size: 100% 100%;
+}
+
+#mensaje
+{
+    width: 60%;
+    margin-left: 20%;
+    background: rgba(0,0,0,5);
+    margin-top: 10px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid rgba(255,255,255,.2);
+    font-size: 12px;
+    /*desaparecer*/
+    opacity: 0;
+}
+
+nav
+{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0px;
+    background: darkblue;
+    left: 0px;
+    right: 0px; 
+    float: left;
+}
+nav>button
+{
+        background: #05185C;
+        border: none;
+        width: 40px;
+        height: 50px;
+        float: left;
+        left: 0px;
+        margin-left: 0px;      
+}
+
+nav>button>img
+{
+    width: 30px;
+    height: 50px;
+    float: left;
+    margin-left: 5px;
+    
+}
+#image
+{
+    width: 60%;
+    margin-left: 20%; 
+    margin-bottom: 10px;
+}
+p
+{
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: #fff;
+    font-size: 25px;
+}
+
+#check
+{
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+
+.chec
+{
+    float: left;
+    width: 15%;
+    margin-left: 0px;
+    margin-right: 0px;
+    
+}
+#c1
+{
+    margin-left: 10%;
+}
+
+.lugares{
+    width: 90%;
+    float: left;
+    background: rgba(255,255,255,.5);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 5%;
+
+}
+
+.lugares>h1{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    float: left;
+    width: 100%;
+    color: black;
+
+}
+.lugares>p{
+    font-size: 16px;
+    padding: 5px;
+    float: left;
+    width: 100%;
+     color: black;
+
+}
+.lugares>img
+{
+    width: 60%;
+    margin-left: 20%; 
+    margin-bottom: 10px;
+}
+#lugares-almacenados
+{
+    margin-top: 65px;
+}
+
